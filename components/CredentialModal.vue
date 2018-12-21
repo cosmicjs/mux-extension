@@ -67,8 +67,15 @@ export default {
     closeModal() {
       this.$store.commit('SET_CREDENTIAL_MODAL', false);
     },
-    saveMuxCredentials() {
-      this.$store.dispatch('SAVE_MUX_SETTINGS');
+    async saveMuxCredentials() {
+      await this.$store.dispatch('SAVE_MUX_SETTINGS');
+      this.$store.commit('SET_CREDENTIAL_MODAL', false);
+      this.$toast.open({
+        duration: 3000,
+        message: 'Mux credentials saved',
+        type: 'is-success',
+        queue: false
+      })
     }
   }
 };
