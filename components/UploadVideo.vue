@@ -18,12 +18,13 @@
         </div>
         <div class="is-pulled-right">
           <button
+            v-if="!videosEmpty"
             class="button is-info"
             @click="isUploadOpen = !isUploadOpen">{{ uploadButtonText }}</button>
         </div>
       </div>
     </div>
-    <b-collapse :open="isUploadOpen">
+    <b-collapse :open="!isLoading && (isUploadOpen || videosEmpty)">
       <b-loading
         :is-full-page="false"
         :active="uploading" />
@@ -80,6 +81,12 @@ export default {
           type: 'is-danger',
           message: 'Error in uploading Video.'
         };
+    },
+    isLoading() {
+      return this.$store.state.loading;
+    },
+    videosEmpty() {
+      return this.$store.state.videos.length == 0;
     }
   },
   methods: {
