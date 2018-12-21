@@ -113,11 +113,6 @@ export default {
               key: 'mux_playback_url',
               type: 'text',
               value: `https://stream.mux.com/${data.playback_ids[0].id}.m3u8`
-            },
-            {
-              key: 'mux_response',
-              type: 'json',
-              value: data
             }
           ],
         });

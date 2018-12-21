@@ -21,11 +21,6 @@
         "key": "mux_playback_url",
         "type": "text",
         "value": ""
-      },{
-        "title": "Mux Response",
-        "key": "mux_response",
-        "type": "json",
-        "value": "{}"
       }
     ]
   }]
