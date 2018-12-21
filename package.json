@@ -9,6 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "export": "nuxt generate && cp extension.json dist/extension.json && zip -r cosmic-mux-extension.zip dist",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"
   },
