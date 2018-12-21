@@ -16,7 +16,6 @@
         <b-table-column
           field="created_at"
           label="Date"
-          sortable
           centered>
           <span class="tag is-success">
             {{ new Date(props.row.created_at).toLocaleDateString() }}
@@ -38,7 +37,11 @@
         <article class="media">
           <figure class="media-left">
             <p class="image is-250">
-              <img :src="`https://image.mux.com/${props.row.metadata.mux_playback_id}/thumbnail.png?width=250`">
+              <a
+                :href="`https://cosmicjs.com/${$store.state.settings.cosmic.slug}/edit-object/${props.row._id}`"
+                target="_blank">
+                <img :src="`https://image.mux.com/${props.row.metadata.mux_playback_id}/thumbnail.png?width=250`">
+              </a>
             </p>
           </figure>
           <div class="media-content">
@@ -47,16 +50,37 @@
                 <strong>Cosmic Slug:</strong>
                 <br>
                 <span>{{ props.row.slug }}</span>
+                <span>
+                  <b-icon
+                    size="is-small"
+                    icon="open-in-new"
+                    class="copy-icon pad"
+                    @click.native="openWindow(props.row._id)" />
+                </span>
                 <br>
                 <br>
                 <strong>Mux ID:</strong>
                 <br>
                 <span>{{ props.row.metadata.mux_id }}</span>
+                <span>
+                  <b-icon
+                    size="is-small"
+                    icon="content-copy"
+                    class="copy-icon pad"
+                    @click.native="handleCopy(props.row.metadata.mux_id)" />
+                </span>
                 <br>
                 <br>
                 <strong>Mux Playback URL:</strong>
                 <br>
                 <span>{{ props.row.metadata.mux_playback_url }}</span>
+                <span>
+                  <b-icon
+                    size="is-small"
+                    icon="content-copy"
+                    class="copy-icon pad"
+                    @click.native="handleCopy(props.row.metadata.mux_playback_url)" />
+                </span>
               </p>
             </div>
           </div>
@@ -80,17 +104,20 @@ export default {
     handleCopy(text) {
       if( this.$clipboard(text)) {
         this.$toast.open({
-          message: 'Mux Playback URL copied to clipboard!',
+          message: 'Copied to clipboard!',
           type: 'is-success',
           queue: false
         });
       } else {
         this.$toast.open({
-          message: 'Copy Mux Playback URL manually from details',
+          message: 'Copy not supported. Do manually',
           type: 'is-warning',
           queue: false
         })
       }
+    },
+    openWindow(id) {
+      window.open(`https://cosmicjs.com/${this.$store.state.settings.cosmic.slug}/edit-object/${id}`);
     }
   }
 };
@@ -102,6 +129,9 @@ export default {
 }
 .image.is-250 {
   width: 250px;
+}
+.copy-icon.pad {
+  padding-left: 5px;
 }
 .copy-icon:hover {
   cursor: pointer;
