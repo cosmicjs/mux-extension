@@ -4,7 +4,7 @@ export default class Mux {
   constructor(state) {
     this.state = state;
     this.baseUrl = 'https://api.mux.com';
-    this.proxyUrl = 'http://localhost:3000/';
+    this.proxyUrl = 'https://1v2tdc90i0.execute-api.us-east-1.amazonaws.com/dev/upload-video';
     this.http = axios.create({
       headers: {
         'Content-Type': 'application/json',

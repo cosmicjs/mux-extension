@@ -1,7 +1,7 @@
 {
   "title": "Mux Extension",
-  "font_awesome_class": "fa-video",
-  "image_url": "https://cosmic-s3.imgix.net/25201b90-7ee2-11e8-976a-53c92c6483b7-algolia.jpg?w=600",
+  "font_awesome_class": "fa-rocket",
+  "image_url": "https://cosmic-s3.imgix.net/ee0ef100-052b-11e9-a865-4d928f17b796-mux.png?w=600",
   "object_types": [{
     "title": "Mux Videos",
     "slug": "mux-videos",
