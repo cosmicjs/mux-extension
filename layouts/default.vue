@@ -103,6 +103,38 @@ export default {
 </script>
 
 <style scoped>
+.navbar.is-spaced {
+  padding: 1rem 1.5rem;
+}
+.navbar-item {
+  display: flex;
+  align-items: center;
+}
+.navbar .container {
+  display: flex;
+}
+.navbar,
+.navbar-menu,
+.navbar-start,
+.navbar-end {
+  align-items: stretch;
+  display: flex;
+  padding: 0;
+}
+
+.navbar-menu{
+  flex-grow: 1;
+  flex-shrink: 0;
+  box-shadow: unset;
+}
+.navbar-start{
+  justify-content: flex-start;
+  margin-right: auto;
+}
+.navbar-end{
+  justify-content: flex-end;
+  margin-left: auto;
+}
 a.dropdown-item.is-active {
   color: #4a4a4a;
   background-color: white;
