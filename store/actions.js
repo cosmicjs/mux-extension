@@ -29,7 +29,9 @@ const actions = {
     };
     try {
       const { objects: videos } = await bucket.getObjects(params);
-      commit('SET_MUX_VIDEOS', videos);
+      if (videos && videos.length > 0) {
+        commit('SET_MUX_VIDEOS', videos);
+      }
     } catch(e) {
 
     }
