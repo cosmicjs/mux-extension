@@ -1,0 +1,32 @@
+{
+  "title": "Mux Extension",
+  "font_awesome_class": "fa-video",
+  "image_url": "https://cosmic-s3.imgix.net/25201b90-7ee2-11e8-976a-53c92c6483b7-algolia.jpg?w=600",
+  "object_types": [{
+    "title": "Mux Videos",
+    "slug": "mux-videos",
+    "singular": "Mux Video",
+    "metafields": [{
+        "title": "Mux ID",
+        "key": "mux_id",
+        "type": "text",
+        "value": ""
+      },{
+        "title": "Mux Playback ID",
+        "key": "mux_playback_id",
+        "type": "text",
+        "value": ""
+      },{
+        "title": "Mux Playback URL",
+        "key": "mux_playback_url",
+        "type": "text",
+        "value": ""
+      },{
+        "title": "Mux Response",
+        "key": "mux_response",
+        "type": "json",
+        "value": "{}"
+      }
+    ]
+  }]
+}

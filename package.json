@@ -1,0 +1,30 @@
+{
+  "name": "cosmic-mux-extension",
+  "version": "1.0.0",
+  "description": "Cosmic JS extension for Mux.",
+  "author": "Jazib Sawar",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt --port 5000",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
+    "cosmicjs": "^3.2.14",
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.0.0",
+    "nuxt-buefy": "^0.2.1",
+    "v-clipboard": "^2.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "babel-eslint": "^8.2.1",
+    "eslint": "^5.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
