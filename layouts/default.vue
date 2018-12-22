@@ -55,7 +55,9 @@
         </div>
       </div>
     </nav>
-    <section class="section">
+    <section
+      class="section"
+      style="padding: 0 20px;">
       <div class="container">
         <b-loading :active="isLoading" />
         <nuxt />
