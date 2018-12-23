@@ -23,5 +23,15 @@
         "value": ""
       }
     ]
-  }]
+  }],
+  "query_params": [
+    {
+      "key": "mux_access_token",
+      "value": ""
+    },{
+      "key": "mux_secret",
+      "value": ""
+    }
+  ],
+  "repo_url": "https://github.com/cosmicjs/mux-extension"
 }
