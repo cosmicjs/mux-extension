@@ -21,6 +21,12 @@
             required
             placeholder="Mux Secret Key" />
         </b-field>
+        <a
+          class="has-text-primary"
+          @click.stop="openHelpModal">
+          Need Help?
+        </a>
+        <br>
         <br>
         <input
           :disabled="isSaving"
@@ -66,6 +72,10 @@ export default {
   methods: {
     closeModal() {
       this.$store.commit('SET_CREDENTIAL_MODAL', false);
+    },
+    openHelpModal() {
+      this.$store.commit('SET_CREDENTIAL_MODAL', false);
+      this.$store.commit('SET_HELP_MODAL', true);
     },
     async saveMuxCredentials() {
       await this.$store.dispatch('SAVE_MUX_SETTINGS');
