@@ -79,8 +79,8 @@ export default {
     }
     this.$store.commit('SET_COSMIC_SETTINGS', cosmic);
     const mux = {
-      access_token_id: this.$route.query.mux_access_token || '728690a9-c338-4834-a278-7d49f6b62939',
-      secret_key: this.$route.query.mux_secret || 'KDjhl5CgSd6/sypFnO3rVxTRLiG+ZHbeTKOSuTGIcatMyk58cfUHOcwEMcpqC84WIMpKbsr7oSc',
+      access_token_id: this.$route.query.mux_access_token || '',
+      secret_key: this.$route.query.mux_secret || '',
     }
     if(mux.access_token_id && mux.secret_key) {
       await this.$store.dispatch('SET_MUX_SETTINGS', mux);
