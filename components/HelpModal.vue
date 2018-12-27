@@ -9,10 +9,12 @@
         <h3 class="title is-4">Connect to Mux</h3>
         <p>To add your Mux API Access Tokens in the Extension. Follow these steps:</p>
         <ol>
-          <li><a href="https://mux.com">Login to your Mux account</a></li>
+          <li><a
+            href="https://mux.com"
+            target="_blank">Login to your Mux account</a></li>
           <li>Go to Your Settings > API Access Tokens</li>
           <li>Click Generate new Token, set your environment & permissions</li>
-          <li>Copy and paste your API Access Tokens (Application Token ID And Secret Key) into the Extension.</li>
+          <li>Copy and paste your API Access Tokens (Application Token ID And Secret Key) into the Extension Query Parameters section located in Mux Extension > Settings.</li>
           <li>Enjoy uploading videos!</li>
         </ol>
         <input

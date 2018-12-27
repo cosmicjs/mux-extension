@@ -84,8 +84,8 @@ export default {
   },
   async beforeCreate() {
     const cosmic = {
-      slug: this.$route.query.bucket_slug || 'gatsby-blog-cosmic-js',
-      read_key: this.$route.query.read_key || '6Dx8qaSRsktk6qAIuzLHvxYMTkM1lflQCgX51sQzY4XOlMVq63',
+      slug: this.$route.query.bucket_slug || 'mux-test',
+      read_key: this.$route.query.read_key || '',
       write_key: this.$route.query.write_key || '',
     }
     this.$store.commit('SET_COSMIC_SETTINGS', cosmic);

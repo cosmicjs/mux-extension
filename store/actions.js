@@ -5,20 +5,16 @@ const actions = {
   FETCH_MUX_SETTINGS: async ({ state, commit }) => {
     commit('SET_PROGRESS', true);
     const bucket = Cosmic.bucket(state.settings.cosmic);
-
-    try {
-      const { object } = await bucket.getObject({ slug: 'mux-info-credentials' });
-      if (object.metadata && object.metadata.access_token_id && object.metadata.secret_key) {
-        const mux = {
-          access_token_id: object.metadata.access_token_id || '',
-          secret_key: object.metadata.secret_key || ''
-        }
-        commit('SET_MUX_SETTINGS', mux);
-        commit('SET_FORM', mux);
-        commit('SET_INIT', true);
-      }
-    } catch(e) {
+    var urlParams = new URLSearchParams(window.location.search);
+    var mux_access_token = decodeURI(urlParams.get('mux_access_token'));
+    var mux_secret = decodeURI(urlParams.get('mux_secret'));
+    const mux = {
+      access_token_id: mux_access_token || '',
+      secret_key: mux_secret || ''
     }
+    commit('SET_MUX_SETTINGS', mux);
+    commit('SET_FORM', mux);
+    commit('SET_INIT', true);
     commit('SET_PROGRESS', false);
   },
   FETCH_MUX_VIDEOS: async ({ state, commit}) => {
