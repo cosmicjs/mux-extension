@@ -1,4 +1,4 @@
-![Mux](https://cosmic-s3.imgix.net/ee0ef100-052b-11e9-a865-4d928f17b796-mux.png?w=600)
+![Mux](https://cosmic-s3.imgix.net/ee0ef100-052b-11e9-a865-4d928f17b796-mux.png?w=600&h=250&fit=crop&crop=center)
 # Mux Extension
 Cosmic JS Extension that integrates the Mux Video Platform with your Bucket.
 
