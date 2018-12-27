@@ -32,15 +32,8 @@ const mutations = {
   SET_INIT: (state, payload) => {
     state.init = payload
   },
-  SET_CREDENTIAL_MODAL: (state, payload) => {
-    state.modal = {
-      credential: payload,
-      help: false
-    }
-  },
   SET_HELP_MODAL: (state, payload) => {
     state.modal = {
-      credential: false,
       help: payload
     }
   }

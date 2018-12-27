@@ -17,7 +17,6 @@ const state = {
     }
   },
   modal: {
-    credential: false,
     help: false
   },
   form: {

@@ -35,14 +35,6 @@
                   icon="settings" />
               </a>
               <b-dropdown-item
-                value="mux-credentials"
-                @click="toggleCredentialsModal">
-                <b-icon
-                  size="is-small"
-                  icon="wrench"/>
-                Mux Credentials
-              </b-dropdown-item>
-              <b-dropdown-item
                 value="help"
                 @click="toggleHelpModal">
                 <b-icon
@@ -61,7 +53,6 @@
       <div class="container">
         <b-loading :active="isLoading" />
         <nuxt />
-        <credential-modal />
         <help-modal />
       </div>
     </section>
@@ -69,12 +60,10 @@
 </template>
 
 <script>
-import CredentialModal from '@/components/CredentialModal'
 import HelpModal from '@/components/HelpModal'
 
 export default {
   components: {
-    CredentialModal,
     HelpModal
   },
   computed: {
@@ -89,14 +78,19 @@ export default {
       write_key: this.$route.query.write_key || '',
     }
     this.$store.commit('SET_COSMIC_SETTINGS', cosmic);
-    await this.$store.dispatch('FETCH_MUX_SETTINGS');
-    await this.$store.dispatch('FETCH_MUX_VIDEOS');
+    const mux = {
+      access_token_id: this.$route.query.mux_access_token || '728690a9-c338-4834-a278-7d49f6b62939',
+      secret_key: this.$route.query.mux_secret || 'KDjhl5CgSd6/sypFnO3rVxTRLiG+ZHbeTKOSuTGIcatMyk58cfUHOcwEMcpqC84WIMpKbsr7oSc',
+    }
+    if(mux.access_token_id && mux.secret_key) {
+      await this.$store.dispatch('SET_MUX_SETTINGS', mux);
+      await this.$store.dispatch('FETCH_MUX_VIDEOS');
+    } else {
+      this.$store.commit('SET_HELP_MODAL', true);
+    }
     this.$store.commit('SET_LOADING', false);
   },
   methods: {
-    toggleCredentialsModal() {
-      this.$store.commit('SET_CREDENTIAL_MODAL', true);
-    },
     toggleHelpModal() {
       this.$store.commit('SET_HELP_MODAL', true);
     }

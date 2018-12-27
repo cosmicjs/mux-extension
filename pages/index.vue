@@ -11,7 +11,7 @@
           </p>
           <button
             class="button is-info"
-            @click="toggleCredentialsModal">Add</button>
+            @click="toggleHelpModal">Help</button>
         </div>
       </div>
     </div>
@@ -41,8 +41,8 @@ export default {
     }
   },
   methods: {
-    toggleCredentialsModal() {
-      this.$store.commit('SET_CREDENTIAL_MODAL', true);
+    toggleHelpModal() {
+      this.$store.commit('SET_HELP_MODAL', true);
     },
   }
 }

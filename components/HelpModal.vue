@@ -17,11 +17,6 @@
           <li>Copy and paste your API Access Tokens (Application Token ID And Secret Key) into the Extension Query Parameters section located in Mux Extension > Settings.</li>
           <li>Enjoy uploading videos!</li>
         </ol>
-        <input
-          type="button"
-          value="Add Access Tokens"
-          class="button is-link"
-          @click.stop="openCredentialModal">
       </div>
     </div>
   </b-modal>
@@ -38,10 +33,6 @@ export default {
   methods: {
     closeModal() {
       this.$store.commit('SET_HELP_MODAL', false);
-    },
-    openCredentialModal() {
-      this.$store.commit('SET_HELP_MODAL', false);
-      this.$store.commit('SET_CREDENTIAL_MODAL', true);
     }
   }
 };
