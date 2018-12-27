@@ -4,7 +4,6 @@ const Cosmic = cosmicjs();
 const actions = {
   FETCH_MUX_SETTINGS: async ({ state, commit }) => {
     commit('SET_PROGRESS', true);
-    const bucket = Cosmic.bucket(state.settings.cosmic);
     var urlParams = new URLSearchParams(window.location.search);
     var mux_access_token = decodeURI(urlParams.get('mux_access_token'));
     var mux_secret = decodeURI(urlParams.get('mux_secret'));
