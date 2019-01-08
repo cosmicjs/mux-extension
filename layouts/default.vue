@@ -26,23 +26,14 @@
               class="navbar-item">
               <img src="~assets/mux-logo.png">
             </a>
-            <b-dropdown position="is-bottom-left">
-              <a
-                slot="trigger"
-                class="navbar-item">
-                <b-icon
-                  size="is-medium"
-                  icon="settings" />
-              </a>
-              <b-dropdown-item
-                value="help"
-                @click="toggleHelpModal">
-                <b-icon
-                  size="is-small"
-                  icon="help" />
-                Help
-              </b-dropdown-item>
-            </b-dropdown>
+            <a
+              class="navbar-item"
+              @click="toggleHelpModal">
+              <b-icon
+                type="is-info"
+                size="is-medium"
+                icon="help-circle" />
+            </a>
           </div>
         </div>
       </div>
