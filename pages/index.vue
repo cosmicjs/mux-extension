@@ -7,7 +7,7 @@
         <div class="box has-text-centered">
           <p class="title is-5">Credentials Missing</p>
           <p class="subtitle">
-            Please provide mux Credentials
+            Please provide Mux Credentials
           </p>
           <button
             class="button is-info"
