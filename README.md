@@ -8,7 +8,7 @@ Cosmic JS Extension that integrates the [Mux Video Platform](https://mux.com) wi
 Follow these steps to install in your Cosmic JS Bucket:
 ### Option A: One click install
 1. [Login to your Cosmic JS account](https://cosmicjs.com)
-2. Go to Your Bucket > Settings > Extensions and find the Mux Video Extension
+2. Go to Your Bucket > Settings > Extensions and find the Mux Videos Extension
 3. Click "Install"
 ### Option B: Upload install
 1. Clone the repo locally
