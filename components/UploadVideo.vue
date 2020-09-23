@@ -107,16 +107,19 @@ export default {
           },
           metafields: [
             {
+              title: "MUX ID",
               key: 'mux_id',
               type: 'text',
               value: data.id
             },
             {
+              title: "MUX Playback ID",
               key: 'mux_playback_id',
               type: 'text',
               value: data.playback_ids[0].id
             },
             {
+              title: "MUX Playback URL",
               key: 'mux_playback_url',
               type: 'text',
               value: `https://stream.mux.com/${data.playback_ids[0].id}.m3u8`
