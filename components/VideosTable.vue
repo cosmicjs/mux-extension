@@ -38,7 +38,7 @@
           <figure class="media-left">
             <p class="image is-250">
               <a
-                :href="`https://cosmicjs.com/${$store.state.settings.cosmic.slug}/edit-object/${props.row.id}`"
+                :href="`https://app.cosmicjs.com/${$store.state.settings.cosmic.slug}/edit-object/${props.row.id}`"
                 target="_blank">
                 <img
                   :src="`https://image.mux.com/${props.row.metadata.mux_playback_id}/thumbnail.png?width=250`"
@@ -121,7 +121,7 @@ export default {
       }
     },
     openWindow(id) {
-      window.open(`https://cosmicjs.com/${this.$store.state.settings.cosmic.slug}/edit-object/${id}`);
+      window.open(`https://app.cosmicjs.com/${this.$store.state.settings.cosmic.slug}/edit-object/${id}`);
     },
     imageNotAvailable(event) {
       const imageUrl = event.target.src;
