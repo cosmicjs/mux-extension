@@ -17,14 +17,20 @@
           <h3 class="title is-3">Videos</h3>
         </div>
         <div class="is-pulled-right">
-          <button
-            v-if="!videosEmpty"
-            class="button is-info"
-            @click="isUploadOpen = !isUploadOpen">{{ uploadButtonText }}</button>
+          <b-tooltip
+            :active="!isWriteKey"
+            label="Setup 'Write Key' in Settings > API Access"
+            position="is-left">
+            <button
+              v-if="!videosEmpty || !isWriteKey"
+              :disabled="!isWriteKey"
+              class="button is-info"
+              @click="isUploadOpen = !isUploadOpen">{{ uploadButtonText }}</button>
+          </b-tooltip>
         </div>
       </div>
     </div>
-    <b-collapse :open="!isLoading && (isUploadOpen || videosEmpty)">
+    <b-collapse :open="!isLoading && isWriteKey && (isUploadOpen || videosEmpty)">
       <b-loading
         :is-full-page="false"
         :active="uploading" />
@@ -86,8 +92,11 @@ export default {
       return this.$store.state.loading;
     },
     videosEmpty() {
-      return this.$store.state.videos.length == 0;
-    }
+      return this.$store.state.videos.length === 0;
+    },
+    isWriteKey() {
+      return !!this.$store.state.settings.cosmic.write_key;
+    },
   },
   methods: {
     async uploadFileChange() {
@@ -99,7 +108,7 @@ export default {
         const { data: response } = await mux.createVideo(media.url);
         const data = response.data;
         const { object: video } = await bucket.addObject({
-          type_slug: 'mux-videos',
+          type: 'mux-videos',
           title: media.original_name,
           content: '',
           options: {
