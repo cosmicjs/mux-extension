@@ -12,7 +12,7 @@
               href="https://cosmicjs.com"
               class="navbar-item">
               <img
-                src="~assets/cosmic-logo.svg"
+                src="https://imgix.cosmicjs.com/4adbc350-27ab-11ec-bc05-c54d649deec6-cosmic-logo.svg"
                 width="24">
             </a>
             <div class="navbar-item">
@@ -24,7 +24,7 @@
               target="_blank"
               href="https://mux.com"
               class="navbar-item">
-              <img src="~assets/mux-logo.png">
+              <img src="https://imgix.cosmicjs.com/4d2f0220-27ab-11ec-bc05-c54d649deec6-mux-logo.png?w=100">
             </a>
             <a
               class="navbar-item"
