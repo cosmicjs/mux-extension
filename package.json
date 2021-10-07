@@ -15,17 +15,17 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
-    "cosmicjs": "^3.3.1",
+    "cosmicjs": "^4.1.2",
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.2.1",
     "v-clipboard": "^2.2.1"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0",
     "babel-eslint": "^8.2.1",
     "eslint": "^5.0.1",
     "eslint-loader": "^2.0.0",
-    "eslint-plugin-vue": "^4.0.0"
+    "eslint-plugin-vue": "^4.0.0",
+    "nodemon": "^1.11.0"
   }
 }

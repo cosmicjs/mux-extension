@@ -12,8 +12,10 @@ const actions = {
   FETCH_MUX_VIDEOS: async ({ state, commit}) => {
     const bucket = Cosmic.bucket(state.settings.cosmic);
     const params = {
-      type: 'mux-videos',
-      sort: '-created_at'
+      query: {
+        type: 'mux-videos',
+      },
+      sort: '-created_at',
     };
     try {
       const { objects: videos } = await bucket.getObjects(params);
@@ -21,7 +23,6 @@ const actions = {
         commit('SET_MUX_VIDEOS', videos);
       }
     } catch(e) {
-
     }
   }
 }
