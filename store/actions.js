@@ -1,5 +1,7 @@
-import cosmicjs from 'cosmicjs'
-const Cosmic = cosmicjs();
+import Cosmic from 'cosmicjs'
+const api = Cosmic({
+  version: 'v3',
+});
 
 const actions = {
   SET_MUX_SETTINGS: async ({ state, commit }, mux) => {
@@ -10,7 +12,7 @@ const actions = {
     commit('SET_PROGRESS', false);
   },
   FETCH_MUX_VIDEOS: async ({ state, commit}) => {
-    const bucket = Cosmic.bucket(state.settings.cosmic);
+    const bucket = api.bucket(state.settings.cosmic);
     const params = {
       query: {
         type: 'mux-videos',

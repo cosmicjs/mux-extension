@@ -5,7 +5,7 @@
   "author": "Jazib Sawar",
   "private": true,
   "scripts": {
-    "dev": "nuxt --port 5000",
+    "dev": "nuxt --port 3000",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
-    "cosmicjs": "^4.1.2",
+    "cosmicjs": "https://github.com/cosmicjs/cosmicjs-node.git#next-v5",
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.2.1",

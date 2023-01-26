@@ -61,10 +61,12 @@
 </template>
 
 <script>
-import cosmicjs from 'cosmicjs';
+import Cosmic from 'cosmicjs';
 import Mux from '@/util/mux'
 
-const Cosmic = cosmicjs();
+const api = Cosmic({
+  version: 'v3',
+});
 export default {
   data() {
     return {
@@ -102,7 +104,7 @@ export default {
     async uploadFileChange() {
       this.uploading = true;
       const mux = new Mux(this.$store.state);
-      const bucket = Cosmic.bucket(this.$store.state.settings.cosmic);
+      const bucket = api.bucket(this.$store.state.settings.cosmic);
       try{
         const { media } = await bucket.addMedia({ media: this.uploadFile[0] });
         const { data: response } = await mux.createVideo(media.url);
